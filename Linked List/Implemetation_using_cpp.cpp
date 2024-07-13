@@ -10,6 +10,9 @@ struct Node{
     } 
 };
 int main(){
+
+    //simple implementation
+
     Node *head=new Node(10);
     Node *temp1=new Node(20);
     Node *temp2=new Node(30);
@@ -20,6 +23,19 @@ int main(){
         cout<<ptr->data<<"->";
         ptr=ptr->next;
     }
-    cout<<"NULL ";
+    cout<<"NULL "<<endl;
+
+    //short implementation
+
+    Node *head2=new Node(10);
+    head2->next=new Node(20);
+    head2->next->next=new Node(30);
+
+    Node *ptr2=head2;
+    while(ptr2!=NULL){
+        cout<<ptr2->data<<"->";
+        ptr2=ptr2->next;
+    }
+    cout<<"NULL "<<endl;
     return 0;
 }
