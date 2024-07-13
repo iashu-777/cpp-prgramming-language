@@ -20,6 +20,6 @@ int main(){
         cout<<ptr->data<<"->";
         ptr=ptr->next;
     }
-    cout<<"NULL";
+    cout<<"NULL ";
     return 0;
 }
