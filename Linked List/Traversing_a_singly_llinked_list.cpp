@@ -26,10 +26,16 @@ void printlist(Node *head){
     cout<<"NULL"<<endl;
 }
 int main(){
-    Node *head=new Node(10);
-    head->next=new Node(20);
-    head->next->next=new Node(30);
-    head->next->next->next=new Node(40);
+    int num1,num2,num3,num4;
+    cin>>num1;
+    cin>>num2;
+    cin>>num3;
+    cin>>num4;
+
+    Node *head=new Node(num1);
+    head->next=new Node(num2);
+    head->next->next=new Node(num3);
+    head->next->next->next=new Node(num4);
     printlist(head);
     return 0;
 }
