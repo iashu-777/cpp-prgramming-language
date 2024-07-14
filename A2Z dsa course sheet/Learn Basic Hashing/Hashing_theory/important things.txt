@@ -1,0 +1,26 @@
+maximum array size
+#inside main
+int--->arr[10^6] bool--->10*7
+#globally
+int--->arr[10^7] bool--->10^8
+
+--------------------------------------------
+
+time complexity
+1)map
+ best average worst sabki O(log N) 
+where N is the number of elements in map
+
+in map you can use key in form of any data structre
+
+2)unordered map
+ average and best is O(1)
+ worst is O(N)
+where N is the number of elements in map
+worst case is very rarely happen , so use unordered map
+if it fails, and give TLE , then jump into map
+
+this worst case happen bcz of internal collisions
+
+in unordered map it is you cannot use many data structre as key
+it is limited
