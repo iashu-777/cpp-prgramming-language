@@ -24,12 +24,13 @@ int BinSearch2(vector<int>&arr,int low,int high,int key){
     if(arr[mid]==key){
         return mid;
     }
-    else if(low>high){
+    if(low>high){
         return -1;
     }
-    else{
-        return BinSearch2(arr,mid+1,mid-1,key);
+    else if(key>arr[mid]){
+        return BinSearch2(arr,mid+1,high,key);
     }
+    return BinSearch2(arr,low,mid-1,key); 
 }
 
 int main(){
