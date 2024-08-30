@@ -88,7 +88,7 @@ void explainVector(){
     //{10,20,12,23,35}
     v.erase(v.begin()+2,v.begin()+4); //{10,20,35}
 
-
+ 
     //insert function
     //pointing iterator ke left me insert karta hai
     vector<int>v(2,100); //{100,100}
