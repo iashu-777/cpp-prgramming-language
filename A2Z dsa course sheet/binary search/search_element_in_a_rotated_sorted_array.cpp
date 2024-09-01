@@ -14,8 +14,8 @@ int search(vector<int>&arr,int n,int k){
                 low=mid+1;
             }
         }
-        else{
-            if(arr[mid]<=k && k<=arr[high]){
+        else{//right sorted
+            if(arr[mid]<=k && k<=arr[high]){ //is present at right half
                 low=mid+1;
             }
             else{
