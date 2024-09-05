@@ -4,6 +4,7 @@ using namespace std;
 int Min(vector<int>&arr){
     int n=arr.size();
     int low=0,high=n-1,ans=INT_MAX;
+    int index=-1;
     while(low<=high){
         int mid=(low+high)/2;
 
@@ -12,6 +13,7 @@ int Min(vector<int>&arr){
         //in that search space
         if(arr[low]<=arr[high]){
             if(arr[low]<ans){
+                index=low;
                 ans=arr[low];
             }
             break;
@@ -20,6 +22,7 @@ int Min(vector<int>&arr){
         //is left sorted
         if(arr[low]<=arr[mid]){
             if(arr[low]<ans){
+                index=low;
                 ans=arr[low];
             }
             low=mid+1;
@@ -27,13 +30,13 @@ int Min(vector<int>&arr){
         //is right sorted
         else{
             if(arr[mid]<ans){
+                index=mid;
                 ans=arr[mid];
-
             }
                 high=mid-1;
         }
     }
-    return ans;
+    return index;
 }
 int main()
 {
