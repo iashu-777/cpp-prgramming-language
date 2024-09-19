@@ -162,7 +162,7 @@ void explainStack(){
     st.push(3); //{3,2,1}
     st.push(3); //{3,3,2,1}
     st.emplace(5); //{5,3,3,2,1}
-
+    
     cout<<st.top();  //prints 5 "** st[2] is invalid ,index accessing is not allowed"
 
     st.pop(); //st looks like{3,3,2,1}
