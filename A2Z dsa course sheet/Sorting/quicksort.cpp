@@ -20,8 +20,8 @@ void qs(vector<int>&arr,int low,int high){
     }
 }
 int main(){
-    int n=6;
-    vector<int>arr{2,3,1,5,4,7};
+    int n=8;
+    vector<int>arr{4,6,2,5,7,9,1,3};
     qs(arr,0,n-1);
    for(int i=0;i<arr.size();i++){
       cout<<arr[i]<<" ";
