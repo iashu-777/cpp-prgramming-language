@@ -143,6 +143,7 @@ int main() {
     printf("Removed max: %d\n", removeMax(&pq));
     printf("Priority Queue elements after removal: ");
     display(&pq);
+printf("~Ashish Kumar Gupta \n CS-DS-2A \n 2301641540057");
     
     return 0;
 }

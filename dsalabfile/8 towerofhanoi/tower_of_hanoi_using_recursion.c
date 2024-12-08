@@ -39,5 +39,7 @@ int main() {
     // Call the Tower of Hanoi function
     printf("The sequence of moves to solve the Tower of Hanoi is:\n");
     towerOfHanoi(n, 'A', 'C', 'B');  // A, B, C are names of the rods
+printf("~Ashish Kumar Gupta \n CS-DS-2A \n 2301641540057");
+    
     return 0;
 }

@@ -46,6 +46,6 @@ int main() {
 
     printf("Sorted array: \n");
     printArray(arr, n);
-
+printf("~Ashish Kumar Gupta \n CS-DS-2A \n 2301641540057");
     return 0;
 }
