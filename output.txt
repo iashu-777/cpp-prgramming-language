@@ -1,7 +1,17 @@
-Original array: 
-64 34 25 12 22 11 90 
-Sorted array: 
-11 12 22 25 34 64 90 
+Dijkstra’s Shortest Path from Vertex 0: 
+Vertex 0: 0
+Vertex 1: 10
+Vertex 2: 15
+Vertex 3: 35
+Vertex 4: 50
+Vertex 5: 80
+Floyd-Warshall Shortest Path Matrix: 
+0 10 15 35 50 80 
+10 0 5 25 40 70 
+15 5 0 20 35 65 
+35 25 20 0 15 45 
+50 40 35 15 0 30 
+80 70 65 45 30 0 
 ~Ashish Kumar Gupta 
  CS-DS-2A 
  2301641540057

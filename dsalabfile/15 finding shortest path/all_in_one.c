@@ -86,25 +86,25 @@ void floydWarshall(int graph[MAX][MAX], int vertices) {
     int dist[vertices][vertices];
     
     // Initialize the distance matrix with the graph values
+for (int i = 0; i < vertices; i++) {
+    for (int j = 0; j < vertices; j++) {
+        if (i == j) dist[i][j] = 0;
+        else if (graph[i][j] != 0) dist[i][j] = graph[i][j];
+        else dist[i][j] = INT_MAX;
+    }
+}
+
+// Floyd-Warshall algorithm
+for (int k = 0; k < vertices; k++) {
     for (int i = 0; i < vertices; i++) {
         for (int j = 0; j < vertices; j++) {
-            if (i == j) dist[i][j] = 0;
-            else if (graph[i][j] != 0) dist[i][j] = graph[i][j];
-            else dist[i][j] = INT_MAX;
-        }
-    }
-    
-    // Floyd-Warshall algorithm
-    for (int k = 0; k < vertices; k++) {
-        for (int i = 0; i < vertices; i++) {
-            for (int j = 0; j < vertices; j++) {
-                if (dist[i][j] > dist[i][k] + dist[k][j]) {
-                    dist[i][j] = dist[i][k] + dist[k][j];
-                }
+            // Check for overflow when dist[i][k] or dist[k][j] is INT_MAX
+            if (dist[i][k] != INT_MAX && dist[k][j] != INT_MAX && dist[i][j] > dist[i][k] + dist[k][j]) {
+                dist[i][j] = dist[i][k] + dist[k][j];
             }
         }
     }
-    
+}
     // Print the shortest distance matrix
     printf("Floyd-Warshall Shortest Path Matrix: \n");
     for (int i = 0; i < vertices; i++) {
