@@ -1,24 +1,25 @@
-// Algorithm
 // 1) Algorithm Partition(A, left, right)
-// 2) P = A[left];
-// 3) k = right;
-// 4) for i=right to i>left do
-// 5) if (arr[i] > pivot)
-// 6) swap(A[i], A[k])
-// 7) k--;
-// 8) end if
-// 9) end for
-// 10) swap (arr[k],arr[left])
+// 2) P = A[left]
+// 3) k = right
+// 4) For i = right to i > left Do
+// 5)     if (A[i] > P) then
+// 6)         swap(A[i], A[k])
+// 7)         k = k - 1
+// 8)     end if
+// 9) End For
+// 10) swap(A[k], A[left])
 // 11) return k
 // 12) End Partition
 
-// 1)Algorithm quicksort(A, left, right)
-// 2) if (right > left )
-// 3) q = partition(A, left, right);
-// // // after ‘partition’ A[left..q-1] ≤A[q] ≤ A[q+1..right]
-// 4) quicksort(A, left, q-1);
-// 5) quicksort(A, q+1, right);
+
+// 1) Algorithm quicksort(A, left, right)
+// 2) if (right > left) then
+// 3)     q = Partition(A, left, right)
+//        // after ‘Partition’ A[left..q-1] ≤ A[q] ≤ A[q+1..right]
+// 4)     quicksort(A, left, q - 1)
+// 5)     quicksort(A, q + 1, right)
 // 6) End quicksort
+
 
 
 #include <stdio.h>

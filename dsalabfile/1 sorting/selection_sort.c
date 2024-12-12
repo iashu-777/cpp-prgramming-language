@@ -1,16 +1,17 @@
 // 1) Algorithm Selection_sort(list, n)
 // 2) Pre: list != ∅
 // 3) Post: list has been sorted into values of ascending order
-// 4) For i=0 to n-2
-// 5) Min=i
-// 6) For j= i+1 to n-1 Do
-// 7) if ( list[j]<list[i] )
-// 8) Min=j
-// 9) end if
-// 10) end For
-// 11) swap(list[i], list[MIN])
-// 12) end For
-// 13) end Selection_sort
+// 4) For i = 0 to n - 2 Do
+// 5)     Min = i
+// 6)     For j = i + 1 to n - 1 Do
+// 7)         if (list[j] < list[Min]) then
+// 8)             Min = j
+// 9)         end if
+// 10)     End For
+// 11)     swap(list[i], list[Min])
+// 12) End For
+// 13) End Selection_sort
+
 
 #include <stdio.h>
 

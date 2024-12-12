@@ -1,14 +1,15 @@
 // 1) Algorithm Bubble_sort(list, n)
 // 2) Pre: list != ∅
 // 3) Post: list has been sorted into values of ascending order
-// 4) For i=0 to n-2 Do
-// 5) For j= 0 to n-i Do
-// 6) if ( list[j+1]<list[j] )
-// 7) swap(list[j+1],list[j])
-// 8) end if
-// 9) end For
+// 4) For i = 0 to n - 2 Do
+// 5)     For j = 0 to n - i - 2 Do
+// 6)         if (list[j + 1] < list[j])
+// 7)             swap(list[j + 1], list[j])
+// 8)         end if
+// 9)     end For
 // 10) end For
-// 11) end Bubble_sort 
+// 11) end Bubble_sort
+
 
 #include <stdio.h>
 

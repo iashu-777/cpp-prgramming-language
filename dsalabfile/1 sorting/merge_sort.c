@@ -1,47 +1,49 @@
-// 1) Algorithm merge_sort(list, low,high)
+// 1) Algorithm merge_sort(list, low, high)
 // 2) Pre: list != ∅
 // 3) Post: list has been sorted into values of ascending order
-// 4) if low>= high // zero or one element
-// 5) return
+// 4) if low >= high // zero or one element
+// 5)     return
 // 6) else
-// 7) mid=(p+q)/2 // midpoint of list[low:high]
-// 8) merge_sort(list,low, mid) // recursively sort list[low:mid]
-// 9) merge_sort(list,mid+1, high) // recursively sort list[mid+1:high]
-// 10) merge(list,low,mid,high) //merge list[low:mid] and list[mid+1:high]
+// 7)     mid = (low + high) / 2 // midpoint of list[low:high]
+// 8)     merge_sort(list, low, mid) // recursively sort list[low:mid]
+// 9)     merge_sort(list, mid + 1, high) // recursively sort list[mid+1:high]
+// 10)    merge(list, low, mid, high) // merge list[low:mid] and list[mid+1:high]
 // 11) end merge_sort
 
-// 1) Algorithm merge(list, low, mid ,high)
-// 2) Pre: two sorted sub arrays in list array
-// 3) Post: two sorted sub arrays merged in list
-// 4) nL = mid-low+1
-// 5) nR= high-mid
-// 6) Let L and R be temporary array of nL and nR length
-// 7) For i=0 to nL-1 Do
-// 8) L[i]=list[low+i]
-// 9) For j=0 to nR-1 Do
-// 10) R[j]=list[mid+j+1]
-// 11) i=0, j=0, k=low
-// 12) While i< nL and j< nR
-// 13) if L[i]<=R[j] then
-// 14) list[k]=L[i]
-// 15) i=i+1
-// 16) else
-// 17) list[k]=R[j]
-// 18) j=j+1
-// 19) end if
-// 20) k=k+1
+
+// 1) Algorithm merge(list, low, mid, high)
+// 2) Pre: two sorted subarrays in the list array
+// 3) Post: two sorted subarrays merged into the list
+// 4) nL = mid - low + 1
+// 5) nR = high - mid
+// 6) Let L and R be temporary arrays of nL and nR length
+// 7) For i = 0 to nL - 1 Do
+// 8)     L[i] = list[low + i]
+// 9) For j = 0 to nR - 1 Do
+// 10)    R[j] = list[mid + j + 1]
+// 11) i = 0, j = 0, k = low
+// 12) While i < nL and j < nR Do
+// 13)    if L[i] <= R[j] then
+// 14)        list[k] = L[i]
+// 15)        i = i + 1
+// 16)    else
+// 17)        list[k] = R[j]
+// 18)        j = j + 1
+// 19)    end if
+// 20)    k = k + 1
 // 21) end while
-// 22) While i< nL
-// 23) list[k]=L[i]
-// 24) i=i+1
-// 25) k=k+1
+// 22) While i < nL Do
+// 23)    list[k] = L[i]
+// 24)    i = i + 1
+// 25)    k = k + 1
 // 26) end while
-// 27) While j< nR
-// 28) list[k]=R[j]
-// 29) j=j+1
-// 30) k=k+1
+// 27) While j < nR Do
+// 28)    list[k] = R[j]
+// 29)    j = j + 1
+// 30)    k = k + 1
 // 31) end while
 // 32) end merge
+
 
 #include <stdio.h>
 

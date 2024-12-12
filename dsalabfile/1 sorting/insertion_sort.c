@@ -2,18 +2,19 @@
 // 2) Pre: list != ∅
 // 3) Post: list has been sorted into values of ascending order
 // 4) unsorted ← 1
-// 5) while unsorted < list_size
-// 6) hold ← list[unsorted]
-// 7) i ← unsorted − 1
-// 8) while i ≥ 0 and hold < list[i]
-// 9) list[i + 1] ← list[i]
-// 10) I i ← i − 1
-// 11) end while
-// 12) list[i + 1] ← hold
-// 13) unsorted ← unsorted + 1
+// 5) while unsorted < list_size Do
+// 6)     hold ← list[unsorted]
+// 7)     i ← unsorted − 1
+// 8)     while i ≥ 0 and hold < list[i] Do
+// 9)         list[i + 1] ← list[i]
+// 10)        i ← i − 1
+// 11)    end while
+// 12)    list[i + 1] ← hold
+// 13)    unsorted ← unsorted + 1
 // 14) end while
 // 15) return list
 // 16) end Insertion_sort
+
 
 #include <stdio.h>
 
