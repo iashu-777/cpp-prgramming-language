@@ -1,2 +1,13 @@
+6
+3
+abc
+4
+xyyx
+8
+alphabet
 1
-1 2 3 4 5 6 7
+k
+10
+aabbccddee
+6
+ttbddq

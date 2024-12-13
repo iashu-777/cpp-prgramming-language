@@ -23,3 +23,11 @@ int minimumSize(vector<int>& nums, int maxOperations) {
         vector<int>nums;
         
     }
+    // problem_links = [
+    //     "https://codeforces.com/problemset/problem/2047/A",
+    //     "https://codeforces.com/problemset/problem/2042/B",
+    //     "https://codeforces.com/problemset/problem/2042/A",
+    //     "https://codeforces.com/problemset/problem/2039/B",
+    //     "https://codeforces.com/problemset/problem/2039/A",
+    //     # Add more links here
+    // ]
