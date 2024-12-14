@@ -1,6 +1,5 @@
-acc
-yyyx
-alphabea
-k
-eabbccddee
-ttbddd
+Enter the number of elements in the array: Enter the elements of the array:
+Enter the element to search: Element not found
+~Ashish Kumar Gupta 
+ CS-DS-2A 
+ 2301641540057

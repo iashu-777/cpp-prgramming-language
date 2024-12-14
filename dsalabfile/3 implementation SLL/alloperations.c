@@ -219,6 +219,11 @@ int main() {
     Insert_Beginning(&head, 10);
     Insert_End(&head, 20);
     Insert_End(&head, 30);
+    Insert_End(&head, 50);
+    Insert_End(&head, 40);
+    Insert_End(&head, 90);
+    Insert_End(&head, 130);
+    Insert_End(&head, 70);
     Insert_At_Position(&head, 25, 2);
 
     printf("List after insertion:\n");
@@ -233,7 +238,7 @@ int main() {
     Traversal(head);
 
     // Searching for an element
-    int index = Search(head, 20);
+    int index = Search(head, 40);
     if (index != -1)
         printf("Element found at index: %d\n", index);
     else
