@@ -1,5 +1,5 @@
-Enter the number of elements in the array: Enter the elements of the array:
-Enter the element to search: Element not found
-~Ashish Kumar Gupta 
- CS-DS-2A 
- 2301641540057
+20
+5
+30
+2
+84

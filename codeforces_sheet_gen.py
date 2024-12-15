@@ -93,7 +93,15 @@ problem_links = [
     "https://codeforces.com/problemset/problem/2042/B",
     "https://codeforces.com/problemset/problem/2042/A",
     "https://codeforces.com/problemset/problem/2039/B",
-    "https://codeforces.com/problemset/problem/2039/A"
+    "https://codeforces.com/problemset/problem/2039/A",
+    "https://codeforces.com/problemset/problem/2037/C",
+    "https://codeforces.com/problemset/problem/2035/B",
+    "https://codeforces.com/problemset/problem/2031/B",
+    "https://codeforces.com/problemset/problem/2030/B",
+    "https://codeforces.com/problemset/problem/2028/A",
+    "https://codeforces.com/problemset/problem/2025/A",
+    "https://codeforces.com/problemset/problem/2021/A",
+    "https://codeforces.com/problemset/problem/2002/B"
 ]
 
 # Fetch problem details
