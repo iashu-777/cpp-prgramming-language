@@ -1,1 +1,14 @@
-9
+In-order traversal: 20 30 40 50 60 70 80 
+Pre-order traversal: 50 30 20 40 70 60 80 
+Post-order traversal: 20 40 30 60 80 70 50 
+Total number of nodes: 7
+Number of internal nodes: 3
+Number of external nodes: 4
+Height of the tree: 3
+Smallest node: 20
+Largest node: 80
+Deleting node 20
+In-order traversal after deletion: 30 40 50 60 70 80 
+~Ashish Kumar Gupta 
+ CS-DS-2A 
+ 2301641540057

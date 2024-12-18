@@ -181,6 +181,14 @@ struct Node* insert(struct Node* root, int data) {
     return root;
 }
 
+// Find the node with the minimum value in the tree
+struct Node* findMin(struct Node* root) {
+    while (root && root->left != NULL) {
+        root = root->left;
+    }
+    return root;
+}
+
 // Delete a node from the binary search tree
 struct Node* deleteNode(struct Node* root, int data) {
     if (root == NULL) {
@@ -212,13 +220,7 @@ struct Node* deleteNode(struct Node* root, int data) {
     return root;
 }
 
-// Find the node with the minimum value in the tree
-struct Node* findMin(struct Node* root) {
-    while (root && root->left != NULL) {
-        root = root->left;
-    }
-    return root;
-}
+
 
 // Traversal – In-order (left, root, right)
 void inorderTraversal(struct Node* root) {
