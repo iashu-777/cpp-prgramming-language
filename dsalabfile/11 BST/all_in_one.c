@@ -343,7 +343,7 @@ int main() {
     
     // Count internal nodes
     printf("Number of internal nodes: %d\n", countInternalNodes(root));
-    
+     
     // Count external nodes
     printf("Number of external nodes: %d\n", countExternalNodes(root));
     

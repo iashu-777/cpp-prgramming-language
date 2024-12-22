@@ -246,7 +246,7 @@ int main() {
 
     // Reverse traversal
     printf("Reverse traversal:\n");
-    Reverse_TraverSSsal(head);
+    Reverse_Traversal(head);
     printf("\n");
 printf("~Ashish Kumar Gupta \n CS-DS-2A \n 2301641540057");
 
