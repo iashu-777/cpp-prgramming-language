@@ -161,7 +161,7 @@ int main() {
         printf("%d ", arr[i]);
     }
     printf("\n");
-
+buildMaxHeap(arr, n);
     // Inserting a new element
     insertElement(arr, &n, 15);
     printf("After inserting 15: ");
