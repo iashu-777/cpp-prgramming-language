@@ -1,32 +1,56 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
+#include <string>
+
 using namespace std;
-class Solution {
-public:
-    int longestSquareStreak(vector<int>& nums) {
-    unordered_set<int>s(nums.begin(),nums.end());
-    int count=0;
-    int max_count=0;
-    for(auto it:s){
-        int n=it;
-        if(s.find(sqrt(n))!=s.end()){
-            it++;
+
+// you just need to implement this function
+string mostCommonWord(string document) {
+    // your code here
+    string s;
+    transform(document.begin(), document.end(), document.begin(), ::tolower);
+    unordered_map<string,pair<int,vector<int>>>mpp;
+    int i;
+    for(i=0;i<document.size();i++){
+        if(document[i]==' '){
+            
+            mpp[s].first++;
+            mpp[s].second.push_back(i);
+            s="";
+        }else{
+        s+=document[i];
+    }
+    }
+     mpp[s].first++;
+            mpp[s].second.push_back(i);
+    int max=0;
+    int min=INT_MAX;
+    for(auto x:mpp){
+        if(x.second.first>max){
+            max=x.second.first;
         }
-        else{
-            count=1;
-            while(s.find(n*n)!=s.end()){
-                n=n*n;
-                count++;
+    }
+    string ans;
+    // for(auto x:mpp){
+    //     cout<<x.first<<" "<<x.second.first<<" "<<x.second.second[0]<<endl;
+    // }
+    for(auto x:mpp){
+        if(x.second.first==max){
+            if(x.second.second[0]<min){
+                min=x.second.second[0];
+                ans=x.first;
+                
             }
-            max_count=max(count,max_count);
         }
     }
-    if(max_count>=2)
-    return max_count;
-    else
-    return -1;
-    }
-};
-int main(){
-    
-    
+    return ans;
+}
+
+int main() {
+    string document;
+    getline(cin, document); 
+
+
+    // please do not change the below code
+    cout << mostCommonWord(document);
+    return 0;
 }

@@ -1,7 +1,7 @@
-Original array: 12 11 13 5 6 7 
-Sorted array: 5 6 7 11 12 13 
-After inserting 15: 15 12 13 11 6 5 7 
-After deleting the root: 13 12 7 11 6 5 
-~Ashish Kumar Gupta 
- CS-DS-2A 
- 2301641540057
+once 1 37
+question 1 24
+this 1 4
+an 2 10
+is 1 7
+easy 2 15
+an
