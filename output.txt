@@ -1,7 +1,1 @@
-once 1 37
-question 1 24
-this 1 4
-an 2 10
-is 1 7
-easy 2 15
-an
+-1
