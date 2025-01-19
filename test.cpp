@@ -1,56 +1,115 @@
-#include <bits/stdc++.h>
-#include <string>
+// // C++ Program to demonstrate use of stringstream object
+// #include <iostream>
+// #include<vector>
+// #include <sstream>
+// #include<string>
 
+// using namespace std;
+
+// int main()
+// {
+
+//     string s = "hi my name is ashish";
+//     stringstream obj(s);    
+//     // string to store words individually
+//     string temp;
+//     vector<string>vec;
+//     // >> operator will read from the stringstream object
+//     while (obj >> temp) {
+//         vec.push_back(temp);
+//     }
+//     for(auto x:vec){
+//         cout<<x<<endl;
+//     }
+//     return 0;
+// }
+
+// #include <iostream>
+// #include <vector>
+// #include <sstream>
+// #include <string>
+
+// using namespace std;
+
+// int main() {
+//     string s = "hi my name is ashish"; // string with commas as delimiter
+//     stringstream obj(s);    
+//     string temp;
+//     vector<string> vec;
+    
+//     // getline with a comma as a delimiter
+//     while (getline(obj, temp, 'i')) {
+//         vec.push_back(temp);
+//     }
+
+//     for (auto x : vec) {
+//         cout << x << endl;
+//     }
+
+//     return 0;
+// }
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// int main() {
+//     string line = "10 20 30 40 50";
+//     stringstream ss(line);
+//     int number;
+//     vector<int> numbers;
+
+//     while (ss>>number) {
+//         numbers.push_back(number);
+//     }
+
+//     for (int num : numbers) {
+//         cout << num << " ";
+//     }
+//     return 0;
+// }
+
+// #include <iostream>
+// #include <sstream>
+
+// using namespace std;
+
+// string trim(const string& str) {
+//     stringstream ss(str);
+//     string temp, result;
+//     while (ss >> temp) {
+//         if (!result.empty()) {
+//             result += " ";
+//         }
+//         result += temp;
+//     }
+//     return result;
+// }
+
+// int main() {
+//     string input = "   Hello     world    ";
+//     string trimmed = trim(input);
+//     cout << "Trimmed: '" << trimmed << "'" << endl;
+//     return 0;
+// }
+
+#include <iostream>
 using namespace std;
 
-// you just need to implement this function
-string mostCommonWord(string document) {
-    // your code here
-    string s;
-    transform(document.begin(), document.end(), document.begin(), ::tolower);
-    unordered_map<string,pair<int,vector<int>>>mpp;
-    int i;
-    for(i=0;i<document.size();i++){
-        if(document[i]==' '){
-            
-            mpp[s].first++;
-            mpp[s].second.push_back(i);
-            s="";
-        }else{
-        s+=document[i];
-    }
-    }
-     mpp[s].first++;
-            mpp[s].second.push_back(i);
-    int max=0;
-    int min=INT_MAX;
-    for(auto x:mpp){
-        if(x.second.first>max){
-            max=x.second.first;
-        }
-    }
-    string ans;
-    // for(auto x:mpp){
-    //     cout<<x.first<<" "<<x.second.first<<" "<<x.second.second[0]<<endl;
-    // }
-    for(auto x:mpp){
-        if(x.second.first==max){
-            if(x.second.second[0]<min){
-                min=x.second.second[0];
-                ans=x.first;
-                
-            }
-        }
-    }
-    return ans;
-}
+// bool repeatedSubstringPattern(string s) {
+//     string doubled = s + s;
+//     return doubled.find(s, 1) != s.size();
+// }
 
-int main() {
-    string document;
-    getline(cin, document); 
+// int main() {
+//     string s = "abaaba";
+//     cout << (repeatedSubstringPattern(s) ? "Yes" : "No") << endl;  // Output: Yes
+//     return 0;
+// }
 
-
-    // please do not change the below code
-    cout << mostCommonWord(document);
+int main(){
+    string s1="hello";
+    string s2="Hello";
+    cout<<s1.compare(s2)<<endl; 
     return 0;
 }
