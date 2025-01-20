@@ -1,49 +1,35 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-#define ll long long
-#define mod 998244353
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    ll t;
-    cin >> t;
-    vector<pair<ll,ll>>vec;
-    ll left_sum=0;
-    ll right_sum=0;
-    while(t--){
-        ll a,b;
-        cin>>a>>b;
-        if(a%2!=0 || b%2!=0){
-            left_sum+=a;
-            right_sum+=b;
-            vec.push_back({a,b});
+
+void generatePattern(int n) {
+    char currentChar = 'a';  // Start from 'a'
+
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < n; j++) {
+            if (n % 2 == 0) {
+                // Even case: Pattern repeats pairs evenly across rows
+                cout << (char)(j / 2 % 2 == 0 ? currentChar : currentChar + 1);
+            } else {
+                // Odd case: Special handling for alternating pairs
+                if (j < n - 1) {
+                    cout << (char)(j / 2 % 2 == 0 ? currentChar : currentChar + 1);
+                } else {
+                    cout << (char)(currentChar + 1);  // Use the next character for the last odd column
+                }
+            }
+            if (j % 2 == 1) currentChar += 2;  // Advance characters every two columns
         }
+        cout << endl;
     }
-    ll count=0;
-     if(left_sum%2==0 && right_sum%2==0){
-            cout<<count;
-            return 0;
-        }
-    for(auto x:vec){
-        if(x.first%2!=0 && x.second%2!=0)
-        continue;
-        if(x.first%2!=0 || x.second%2!=0){
-            left_sum-=x.first;
-            left_sum+=x.second;
-            right_sum-=x.second;
-            right_sum+=x.first;
-            count++;
-        }
-        if(left_sum%2==0 && right_sum%2==0){
-            cout<<count;
-            return 0;
-        }
+}
+
+int main() {
+    int n;
+    cin >> n;
+    if (n < 2) {
+        cout << -1<< endl;
+    } else {
+        generatePattern(n);
     }
-    if(left_sum%2==0 && right_sum%2==0){
-            cout<<count;
-            return 0;
-        }
-    cout<<-1;
     return 0;
 }

@@ -22,7 +22,7 @@ vector<ll>pre;
 for(ll i=2;i<=1000000;i++){
     if(isPrime(i)){
         pre.push_back(i*i);
-    }
+    } 
 }
 cin>>n;
 loop(0,n,1){
