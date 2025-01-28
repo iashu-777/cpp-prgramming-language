@@ -11,6 +11,7 @@
                 "${workspaceFolder}\\jspwTest.cpp",
                 "&&",
                 "g++",
+                "-std=c++17",
                 "jspwTest.cpp",
                 "-o",
                 "jspwTest",
@@ -72,3 +73,83 @@
         }
     ]
 }
+
+// {
+//     "version": "2.0.0",
+//     "label": "Compile and run",
+//             "type": "shell",
+//             "command": "",
+//     "cmd": ["g++.exe",
+// "-std=c++17","${file}",
+// "-o",
+// "${file_base_name}.exe",
+// "&&",
+// "${file_base_name}.exe<input.txt>output.txt"],
+//     "shell":true,
+//     "working_dir":"$file_path",
+//     "selector":"source.cpp"
+// }
+
+
+//wroking
+
+// {
+//     "version": "2.0.0",
+//     "tasks": [
+//         {
+//             "label": "Compile and Run in Command Prompt",
+//             "type": "shell",
+//             "command": "cmd.exe",
+//             "args": [
+//                 "/c",
+//                 "g++.exe -std=c++17 \"${file}\" -o \"${fileDirname}\\${fileBasenameNoExtension}.exe\" && \"${fileDirname}\\${fileBasenameNoExtension}.exe\" < input.txt > output.txt"
+//             ],
+//             "group": {
+//                 "kind": "build",
+//                 "isDefault": true
+//             },
+//             "problemMatcher": ["$gcc"],
+//             "detail": "Task to compile and run C++ file in Command Prompt and close automatically"
+//         }
+//     ]
+// }
+
+
+// {
+//     "version": "2.0.0",
+//     "tasks": [
+//         {
+//             "label": "Compile and Run Internally",
+//             "type": "shell",
+//             "command": "g++.exe",
+//             "args": [
+//                 "-std=c++17",
+//                 "${file}",
+//                 "-o",
+//                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
+//             ],
+//             "problemMatcher": ["$gcc"],
+//             "group": {
+//                 "kind": "build",
+//                 "isDefault": true
+//             },
+//             "detail": "Compiles the C++ file"
+//         },
+//         {
+//             "label": "Run Program Internally",
+//             "type": "shell",
+//             "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+//             "args": ["<", "input.txt", ">", "output.txt"],
+//             "presentation": {
+//                 "echo": false,
+//                 "reveal": "never", 
+//                 "focus": false,
+//                 "panel": "shared"
+//             },
+//             "problemMatcher": [],
+//             "dependsOn": "Compile and Run Internally",
+//             "detail": "Runs the compiled program quietly with redirection"
+//         }
+//     ]
+// }
+

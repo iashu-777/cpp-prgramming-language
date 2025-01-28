@@ -20,17 +20,29 @@ while(t--){
         cin>>x;
         v.push_back(x);
     }
-    for(ll i=0;i<n-1;i++){
-        if(v[i]==v[i+1])continue;
-        else if(v[i]<v[i+1]){
-            cout<<"YES"<<endl;
-            break;
-        }
-        else{
-            cout<<"NO"<<endl;
-            break;
-        }
+    ll j=0;
+   if(v[0]>v[1])cout<<"NO";
+   else if(v[0]==v[1]){
+    ll i=0;
+    while(i<n && v[i]==v[i+1]){
+        i++;
     }
-}
+    if(v[i]>v[i+1]){
+        cout<<"NO";
+    }
+   }
+   else{
+    
+         if ((v[0] == 1) && (v[ 1] > v[ 2])) {
+        cout << "NO" ;
+    } else {
+        cout << "YES";
+    }
+   }
+   
+    cout<<"\n";
+} 
+    
+
 return 0;
 }
