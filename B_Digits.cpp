@@ -101,7 +101,7 @@ int main() {
             }
         }
 
-        // Output the divisors
+        // Output the divisor
         for (size_t i = 0; i < divisors.size(); i++) {
             cout << divisors[i];
             if (i < divisors.size() - 1) cout << " ";
