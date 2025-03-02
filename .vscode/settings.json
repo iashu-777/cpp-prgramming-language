@@ -5,6 +5,8 @@
         "stdlib.h": "c",
         "stdio.h": "c",
         "iosfwd": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "*.tcc": "cpp",
+        "cmath": "cpp"
     }
 }

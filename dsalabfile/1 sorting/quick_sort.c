@@ -24,28 +24,37 @@
 
 #include <stdio.h>
 
-// Function to partition the array
 int partition(int arr[], int low, int high) {
-    int pivot = arr[high]; // Choose the last element as pivot
-    int i = low - 1;       // Index of smaller element
+    int pivot = arr[low];  // First element as pivot
+    int start = low + 1;   // Start pointer
+    int end = high;        // End pointer
 
-    for (int j = low; j < high; j++) {
-        if (arr[j] < pivot) {
-            i++;
-            // Swap arr[i] and arr[j]
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+    while (start <= end) {
+        // Move start forward if arr[start] is less than pivot
+        while (start <= end && arr[start] <= pivot) {
+            start++;
+        }
+        // Move end backward if arr[end] is greater than pivot
+        while (start <= end && arr[end] > pivot) {
+            end--;
+        }
+
+        // Swap elements if start is still smaller than end
+        if (start < end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
         }
     }
-    // Swap arr[i + 1] and pivot (arr[high])
-    int temp = arr[i + 1];
-    arr[i + 1] = arr[high];
-    arr[high] = temp;
 
-    return i + 1;
+    // Swap pivot (arr[low]) with arr[end] to put it in the correct position
+    int temp = arr[low];
+    arr[low] = arr[end];
+    arr[end] = temp;
+
+    return end;  // Return partition index
 }
-
+ 
 // Function to implement quicksort
 void quickSort(int arr[], int low, int high) {
     if (low < high) {
