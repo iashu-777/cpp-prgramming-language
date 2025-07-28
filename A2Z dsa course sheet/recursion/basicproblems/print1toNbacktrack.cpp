@@ -7,18 +7,20 @@ ll gcd(ll a, ll b) { return b ? gcd(b, a % b) : a; }
 ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
 
 
-
-int main(){
-ios_base::sync_with_stdio(false);
-cin.tie(NULL);
-ll n;
-cin>>n;
-ll i=1;
-ll res=0;
-while(n/pow(5,i)>0){
-    res+=(n/pow(5,i));
-    i++;
+//u cant use i+1 in the recursion , u can use i-1 type thing
+void func(int i){
+    if(i<1){
+        return;
+    }
+    else{
+        func(i-1);
+        printf("%d\n",i);
+    }
 }
-cout<<res;
+int main(){
+
+int n;
+cin>>n;
+func(n);
 return 0;
 }

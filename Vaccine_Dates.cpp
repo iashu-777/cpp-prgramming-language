@@ -11,14 +11,24 @@ ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
 int main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
-ll n;
-cin>>n;
-ll i=1;
-ll res=0;
-while(n/pow(5,i)>0){
-    res+=(n/pow(5,i));
-    i++;
+ll t;
+cin>>t;
+while(t--)
+{
+    ll d,l,r;
+    cin>>d>>l>>r;
+    if(d<l){
+        cout<<"Too Early";
+    }
+    else{
+        if(d>=l&& d>=r){
+            cout<<"Too Late";
+        }
+        else{
+            cout<<"Take second dose now";
+        }
+    }
+    cout<<endl;
 }
-cout<<res;
 return 0;
 }

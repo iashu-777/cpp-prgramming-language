@@ -11,14 +11,15 @@ ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
 int main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
-ll n;
-cin>>n;
-ll i=1;
-ll res=0;
-while(n/pow(5,i)>0){
-    res+=(n/pow(5,i));
-    i++;
+
+ll t;
+cin>>t;
+while(t--){
+    ll n;
+    for(ll i=0;i<n;i++){
+        
+    }
 }
-cout<<res;
+
 return 0;
 }

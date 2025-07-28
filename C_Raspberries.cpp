@@ -17,25 +17,49 @@ while(t--){
     ll n,k;
     cin>>n>>k;
     vector<ll>v;
-    loop(0,n,1) {
+    for(ll i=0;i<n;i++){
         ll x;
         cin>>x;
         v.push_back(x);
     }
-    ll mini=k;
-    if(k==4){
-        mini=2;
-    }
-    for(ll i=0;i<n;i++){
-        if(v[i]%k==0){
-            mini=0;
-            break;
+    if(k!=4){
+
+        ll maxi=0;
+        for(auto x:v){
+            maxi=max(maxi,x%k);
         }
-        else{
-            mini=min(mini,k-(v[i]%k));
+        ll flag=0;
+        for(auto x:v){
+            if(x%k==0){
+                cout<<0<<endl;
+                flag=1;
+                break;
+            }
         }
+        if(flag==0)
+        cout<<k-maxi<<endl;
     }
-    cout<<mini<<endl;
+    else{
+        unordered_map<ll,ll>mpp;
+        for(auto x:v){
+            mpp[x%k]++;
+        }
+        ll mini=3;
+        if(mpp[2]>=1 || mpp[1]>=2){
+            mini=min(mini,(long long)2);
+        }
+        if(mpp[3]>=1 || (mpp[1]>=1 &&mpp[2]>=1)){
+            mini=min(mini,(long long)1);
+            
+        }
+        if(mpp[2]>=2 || mpp[0]>=1){
+            mini=min(mini,(ll)0);
+        }
+        if(mpp[1]>=1){
+            mini=min(mini,(ll)3);
+        }
+        cout<<mini<<endl;
+    }
 }
-return 0;
+    return 0;
 }

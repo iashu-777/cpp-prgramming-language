@@ -8,7 +8,8 @@
 		"files.associations": {
 			"iostream": "cpp",
 			"random": "cpp",
-			"stdio.h": "c"
+			"stdio.h": "c",
+			"wait.h": "c"
 		}
 	}
 }

@@ -11,14 +11,21 @@ ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
 int main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
-ll n;
-cin>>n;
-ll i=1;
-ll res=0;
-while(n/pow(5,i)>0){
-    res+=(n/pow(5,i));
-    i++;
+ll n,m;
+cin>>n>>m;
+vector<ll>v;
+for(ll i=0;i<n;i++){
+    ll x;
+    cin>>x;
+    v.push_back(x);
 }
-cout<<res;
+ll summ=accumulate(v.begin(),v.end(),0);
+if(summ<=m){
+    cout<<"Yes";
+}
+else{
+    cout<<"No";
+}
+
 return 0;
 }

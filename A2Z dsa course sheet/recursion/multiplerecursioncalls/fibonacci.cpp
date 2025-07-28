@@ -6,19 +6,20 @@ using namespace std;
 ll gcd(ll a, ll b) { return b ? gcd(b, a % b) : a; }
 ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
 
-
+int f(int n){
+    if(n<=1)
+    {
+        return n;
+    }
+    int last=f(n-1);
+    int second_last=f(n-2);
+    return last+second_last;
+}
 
 int main(){
-ios_base::sync_with_stdio(false);
-cin.tie(NULL);
-ll n;
+
+int n;
 cin>>n;
-ll i=1;
-ll res=0;
-while(n/pow(5,i)>0){
-    res+=(n/pow(5,i));
-    i++;
-}
-cout<<res;
+cout<<f(n);
 return 0;
 }

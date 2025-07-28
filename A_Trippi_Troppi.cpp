@@ -11,14 +11,22 @@ ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
 int main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
-ll n;
-cin>>n;
-ll i=1;
-ll res=0;
-while(n/pow(5,i)>0){
-    res+=(n/pow(5,i));
-    i++;
+ll t;
+cin>>t;
+cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+
+while(t--){
+    string s;
+    getline(cin,s);
+    string ans;
+    ans+=s[0];
+    for(int i=0;i<s.size();i++){
+        if(s[i]==' '){
+            ans+=s[i+1];
+        }
+    }
+    cout<<ans<<endl;
+
 }
-cout<<res;
 return 0;
 }

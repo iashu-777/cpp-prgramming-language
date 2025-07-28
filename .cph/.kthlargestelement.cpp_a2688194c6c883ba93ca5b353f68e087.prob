@@ -1,0 +1,1 @@
+{"name":"Local: kthlargestelement","url":"c:\\Users\\calcu\\OneDrive\\Documents\\code\\kthlargestelement.cpp","tests":[{"id":1744005543858,"input":"1\n6 2\n3 2 1 5 6 4","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\calcu\\OneDrive\\Documents\\code\\kthlargestelement.cpp","group":"local","local":true}

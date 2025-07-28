@@ -13,12 +13,20 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 ll n;
 cin>>n;
-ll i=1;
-ll res=0;
-while(n/pow(5,i)>0){
-    res+=(n/pow(5,i));
-    i++;
+vector<string>v;
+for(ll i=0;i<n;i++){
+    string s;
+    cin>>s;
+    v.push_back(s);
 }
-cout<<res;
+unordered_map<string,ll>mpp;
+
+for(ll i=0;i<n;i++){
+    for(ll j=0;j<n;j++){
+        if(v[i]==v[j])continue;
+        mpp[v[i]+v[j]]++;
+    }
+}
+cout<<mpp.size();
 return 0;
 }

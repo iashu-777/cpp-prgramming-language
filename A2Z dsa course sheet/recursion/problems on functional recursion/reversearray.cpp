@@ -6,19 +6,23 @@ using namespace std;
 ll gcd(ll a, ll b) { return b ? gcd(b, a % b) : a; }
 ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
 
+void func(int arr[],int i,int n){
+    if(i>=n)return ;
+    else{
+        swap(arr[i],arr[n]);
+        func(arr,i+1,n-1);
+    }
 
+}
 
 int main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
-ll n;
-cin>>n;
-ll i=1;
-ll res=0;
-while(n/pow(5,i)>0){
-    res+=(n/pow(5,i));
-    i++;
+
+int arr[5]={1,2,3,4,5};
+func(arr,0,4);
+for(int i=0;i<5;i++){
+    cout<<arr[i]<<" ";
 }
-cout<<res;
 return 0;
 }
