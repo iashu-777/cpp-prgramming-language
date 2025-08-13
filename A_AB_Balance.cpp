@@ -13,65 +13,48 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 ll t;
 cin>>t;
-
 while(t--){
     string s;
     cin>>s;
     ll n=s.size();
-    ll cab=0;
-    ll cba=0;
-    for(ll i=0;i<n-1;i++){
-        if(s[i]=='b' &&s[i+1]=='a'){
-            cba++;
+    //count ab
+    ll ab,ba;
+    ab=ba=0;
+    for(ll i=0;i<n-1;){
+        if(s[i]=='a' && s[i+1]=='b'){
+            ab++;
+            i++;
         }
-        else if(s[i]=='a' &&s[i+1]=='b'){
-            cab++;
+        else if(s[i]=='b' && s[i+1]=='a'){
+            ba++;
+            i++;
         }
-    }
-    // for(ll i=0;i<n-1;i++){
-    //     if(s[i]=='b' &&s[i+1]=='a'){
-    //         cba++;
-    //         i++;
-    //     }
-    // }
-    string ans=s;
-    if(cba>cab){
-        ll count=cba-cab;
-        for(ll i=0;i<n-1;){
-            if(count-- && ans[i]=='b'&&ans[i+1]=='a'){
-                if(i>0 && ans[i-1]=='b')
-                ans[i+2]='b';
-                else
-                ans[i]='a';
-                i+=2;
-            }
-            else if(ans[i]=='a' &&ans[i+1]=='b'){
-                i+=2;
-            }
-            else {
-                i++;
-            }
+        else{
+            i++;
         }
     }
-    else if(cab>cba){
-        ll count=cab-cba;
-        for(ll i=0;i<n-1;){
-            if(ans[i]=='a'&&ans[i+1]=='b'&&count--){
-                if(i>0 && ans[i-1]=='a')
-                ans[i+2]='a';
-                else
-                ans[i]='b';
-                i+=2;
-            }
-            else if(ans[i]=='b' &&ans[i+1]=='a'){
-                i+=2;
-            }
-            else {
-                i++;
+    if(ab==ba){
+        cout<<s<<endl;
+    }else if(ab>ba){
+
+        for(ll i=0;i<n-1;i++){
+            if(s[i]=='a' && s[i+1]=='b'){
+                s[i+1]='a';
+                break;
             }
         }
+        cout<<s<<endl;
+
     }
-    cout<<ans<<"\n";
+    else{
+        for(ll i=0;i<n-1;i++){
+            if(s[i]=='b' && s[i+1]=='a'){
+                s[i+1]='b';
+                break;
+            }
+        }
+        cout<<s<<endl;
+    }
 }
 return 0;
 }

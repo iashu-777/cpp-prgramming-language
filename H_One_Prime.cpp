@@ -10,20 +10,21 @@ ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
 
 int main(){
 ios_base::sync_with_stdio(false);
-cin.tie(NULL);  
-ll t;
-cin>>t;
-while(t--){
-    ll a,b,c;
-    cin>>a>>b>>c;
-    ll flag=0;
-    if(((2*b)-c>0) && ((2*b)-c)%a==0) flag=1;
-    if((a+c)%(2*b)==0) flag=1;
-    if(((2*b)-a)>0 && ((2*b)-a)%c==0) flag=1;
-
-    if(flag==1)cout<<"YES";
-    else cout<<"NO";
-    cout<<endl;
+cin.tie(NULL);
+int n=100001;
+vector<bool>v(n,1);
+v[0]=0;
+v[1]=0;
+for(ll i=2;i<=n-1;i++){
+    if(v[i]==1){
+        v[i]=1;
+        for(ll j=i*i;j<n;j=j+i){
+            v[j]=0;
+        }
+    }
 }
+ll k;
+cin>>k;
+v[k]==1?cout<<"YES":cout<<"NO";
 return 0;
 }

@@ -13,54 +13,55 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 ll t;
 cin>>t;
-
-for(ll j=1;j<=t;j++){
+while(t--){
     ll n;
     cin>>n;
     vector<ll>v;
-    loop(0,n,1) {
+    for(ll i=0;i<n;i++){
         ll x;
         cin>>x;
         v.push_back(x);
     }
-    // if(j==18 && t==1000){
-    //     cout<<endl;
-    //     for(auto x:v){
-    //         cout<<x<<" ";
-    //     }
-    //     cout<<endl;
-    // }
-    ll count=2;
     ll flag=0;
-    ll fl=0;
-    for(ll i=1;i<n-1;i++){
-        if(v[i]!=0 && v[i+1]==0 && v[i-1]==0){
-            count=1;
-            break;
-        }
-        if(v[i]==0){
-            fl=1;
-        }
-    }
-    if(fl==1 && (v[0]!=0 || v[n-1]!=0)){
-         count=1;
-    }
-    for(auto x:v){
-        if(x!=0){
+    for(ll i=0;i<n;i++){
+        if(v[i]!=0){
             flag=1;
-            break;
         }
     }
-    if(flag==0){
-        cout<<0;
+    ll flag1=0;
+    // for(ll i=1;i<n-1;i++){
+    //     if((v[i-1]!=0) && (v[i]==0) &&(v[i+1]!=0)){
+    //         flag1=1;
+    //         break;
+    //     }
+    // }
+    ll flag2=0;
+    for(ll i=0;i<n;){
+        if(v[i]!=0){
+            i++;
+            while(i<n && v[i]==0){
+                i++;
+                flag2=1;
+            }
+            if(flag2==1 && i<n && v[i]!=0){
+                flag1=1;
+                break;
+            }
+        }
+        else{
+            i++;
+        }
+    }
+    if(flag1==1){
+        cout<<2<<endl;
+    }
+    else if(flag==0){
+        cout<<0<<endl;
     }
     else{
-        cout<<count;
+        cout<<1<<endl;
     }
-    cout<<endl;
-    // if(t==1000 && )
-    // cout<<count<<"\n";
- 
+
 }
 return 0;
 }
