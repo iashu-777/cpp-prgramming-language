@@ -19,33 +19,17 @@ cin.tie(NULL);
 cout.tie(NULL);
 ll t;
 cin>>t;
+vector<ll>v;
+for(ll i=1;;i++){
+    if(i*i>1000000000)break;
+    v.push_back(i*i);
+}
 while(t--){
-    ll y,x;
-    cin>>y>>x;
-    ll i=y-1;
-    ll n1=0;
-    ll n2=0;
-    ll j=x-1;
-    if(i%2!=0){
-        n1=(i+1)*(i+1);
-    }
-    else{
-        n1=(i+1)*(i+1)+1;
-    }
-    if(j%2==0){
-        n2=(j+1)*(j+1);
-    }
-    else{
-        n2=j*j+1;
-    }
-    if(y>x){
-        n1-=(x-1);
-        cout<<n1<<endl;
-    }
-    else{
-        n2-=(y-1);
-        cout<<n2<<endl;
-    }
+    ll n;
+    cin>>n;
+    int idx = upper_bound(v.begin(), v.end(), n) - v.begin();
+    cout<<v[idx]<<"\n";
+
 }
 return 0;
 }

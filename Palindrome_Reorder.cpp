@@ -17,35 +17,40 @@ int main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 cout.tie(NULL);
-ll t;
-cin>>t;
-while(t--){
-    ll y,x;
-    cin>>y>>x;
-    ll i=y-1;
-    ll n1=0;
-    ll n2=0;
-    ll j=x-1;
-    if(i%2!=0){
-        n1=(i+1)*(i+1);
+string s;
+cin>>s;
+unordered_map<char,ll>mpp;
+for(auto x:s){
+    mpp[x]++;
+}
+ll count=0;
+for(auto x:mpp){
+    if(x.second%2!=0){
+        count++;
     }
-    else{
-        n1=(i+1)*(i+1)+1;
+}
+if(count<=1){
+    string l,m,n;
+    for(auto x:mpp){
+        char c=x.first;
+        ll k=x.second;
+        if(x.second%2==0){
+            string l1(k/2,c);
+            l=l+l1;
+            
+            
+        }
+        else{
+            string l2(k,c);
+            m+=l2;
+        }
     }
-    if(j%2==0){
-        n2=(j+1)*(j+1);
-    }
-    else{
-        n2=j*j+1;
-    }
-    if(y>x){
-        n1-=(x-1);
-        cout<<n1<<endl;
-    }
-    else{
-        n2-=(y-1);
-        cout<<n2<<endl;
-    }
+    n=l;
+    reverse(n.begin(),n.end());
+    cout<<l<<m<<n;
+}
+else{
+    cout<<"NO SOLUTION";
 }
 return 0;
 }

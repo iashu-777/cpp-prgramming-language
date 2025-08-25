@@ -7,7 +7,6 @@ ll gcd(ll a, ll b) { return b ? gcd(b, a % b) : a; }
 ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
 ll sum_of_digits(ll n){ ll s=0; for(;n;n/=10) s+=n%10; return s; }
 vector<bool> sieve(ll n){ vector<bool> v(n+1,1); v[0]=v[1]=0; for(ll i=2;i*i<=n;i++) if(v[i]) for(ll j=i*i;j<=n;j+=i) v[j]=0; return v; }
- ll lbound(vector<ll>v,ll x){ ll k= lower_bound(v.begin(), v.end(), x) - v.begin();return k;}
 
 
 
@@ -17,35 +16,22 @@ int main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 cout.tie(NULL);
+ll n=1000;
+vector<ll>v;
+ll i=1;
+while(v.size()<1001){
+    if(!(i%3==0 || i%10==3)){
+        v.push_back(i);
+    }
+    i++;
+    
+}
 ll t;
 cin>>t;
 while(t--){
-    ll y,x;
-    cin>>y>>x;
-    ll i=y-1;
-    ll n1=0;
-    ll n2=0;
-    ll j=x-1;
-    if(i%2!=0){
-        n1=(i+1)*(i+1);
-    }
-    else{
-        n1=(i+1)*(i+1)+1;
-    }
-    if(j%2==0){
-        n2=(j+1)*(j+1);
-    }
-    else{
-        n2=j*j+1;
-    }
-    if(y>x){
-        n1-=(x-1);
-        cout<<n1<<endl;
-    }
-    else{
-        n2-=(y-1);
-        cout<<n2<<endl;
-    }
+    ll x;
+    cin>>x;
+    cout<<v[x-1]<<endl;
 }
 return 0;
 }

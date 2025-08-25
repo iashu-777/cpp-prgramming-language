@@ -20,32 +20,35 @@ cout.tie(NULL);
 ll t;
 cin>>t;
 while(t--){
-    ll y,x;
-    cin>>y>>x;
-    ll i=y-1;
-    ll n1=0;
-    ll n2=0;
-    ll j=x-1;
-    if(i%2!=0){
-        n1=(i+1)*(i+1);
+    ll n;
+    cin>>n;
+    string a;
+    cin>>a;
+    ll p;
+    cin>>p;
+    string b;
+    cin>>b;
+    string copu;
+    cin>>copu;
+
+    deque<char>dq;
+    for(auto x:a){
+        dq.push_back(x);
     }
-    else{
-        n1=(i+1)*(i+1)+1;
+    ll j=0;
+    for(auto x:copu){
+        if(x=='D'){
+            dq.push_back(b[j]);
+        }
+        else{
+            dq.push_front(b[j]);
+        }
+        j++;
     }
-    if(j%2==0){
-        n2=(j+1)*(j+1);
+    for(auto x:dq){
+        cout<<x;
     }
-    else{
-        n2=j*j+1;
-    }
-    if(y>x){
-        n1-=(x-1);
-        cout<<n1<<endl;
-    }
-    else{
-        n2-=(y-1);
-        cout<<n2<<endl;
-    }
+    cout<<endl;
 }
 return 0;
 }

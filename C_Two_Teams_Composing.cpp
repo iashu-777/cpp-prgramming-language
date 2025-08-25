@@ -7,7 +7,6 @@ ll gcd(ll a, ll b) { return b ? gcd(b, a % b) : a; }
 ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
 ll sum_of_digits(ll n){ ll s=0; for(;n;n/=10) s+=n%10; return s; }
 vector<bool> sieve(ll n){ vector<bool> v(n+1,1); v[0]=v[1]=0; for(ll i=2;i*i<=n;i++) if(v[i]) for(ll j=i*i;j<=n;j+=i) v[j]=0; return v; }
- ll lbound(vector<ll>v,ll x){ ll k= lower_bound(v.begin(), v.end(), x) - v.begin();return k;}
 
 
 
@@ -20,32 +19,39 @@ cout.tie(NULL);
 ll t;
 cin>>t;
 while(t--){
-    ll y,x;
-    cin>>y>>x;
-    ll i=y-1;
-    ll n1=0;
-    ll n2=0;
-    ll j=x-1;
-    if(i%2!=0){
-        n1=(i+1)*(i+1);
-    }
-    else{
-        n1=(i+1)*(i+1)+1;
-    }
-    if(j%2==0){
-        n2=(j+1)*(j+1);
-    }
-    else{
-        n2=j*j+1;
-    }
-    if(y>x){
-        n1-=(x-1);
-        cout<<n1<<endl;
-    }
-    else{
-        n2-=(y-1);
-        cout<<n2<<endl;
+ll n;
+cin>>n;
+vector<ll>v;
+for(ll i=0;i<n;i++){
+ll x;
+cin>>x;
+v.emplace_back(x);
+}
+
+unordered_map<ll,ll>mpp;
+for(auto x:v){
+    mpp[x]++;
+}
+ll maxi=INT_MIN;
+for(auto x:mpp){
+    if(x.second>maxi){
+        maxi=x.second;
     }
 }
+ll k=mpp.size()-1;
+if(n==1){
+    cout<<0<<endl;
+}else{
+
+    if(k<maxi-1){
+        cout<<min(k+1,maxi)<<endl;
+    }
+    else
+    cout<<min((k),maxi)<<endl;
+    
+}
+
+}
+
 return 0;
 }

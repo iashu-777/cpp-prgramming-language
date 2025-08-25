@@ -20,32 +20,30 @@ cout.tie(NULL);
 ll t;
 cin>>t;
 while(t--){
-    ll y,x;
-    cin>>y>>x;
-    ll i=y-1;
-    ll n1=0;
-    ll n2=0;
-    ll j=x-1;
-    if(i%2!=0){
-        n1=(i+1)*(i+1);
+    string s;
+    cin>>s;
+    ll n=s.size();
+    ll flag=0;
+    ll i=0;
+    for(i=0;i<n-1;i++){
+        if(s[i]=='1' && s[i+1]=='1'){
+            flag=1;
+            break;
+        }   
     }
-    else{
-        n1=(i+1)*(i+1)+1;
+    ll j=0;
+    for(j=0;j<n-1;j++){
+        if(j>i+1 && flag==1 && (s[j]=='0' && s[j+1]=='0')){
+            flag=2;
+            break;
+        }
     }
-    if(j%2==0){
-        n2=(j+1)*(j+1);
+    if(flag==2){
+        cout<<"NO";
     }
-    else{
-        n2=j*j+1;
-    }
-    if(y>x){
-        n1-=(x-1);
-        cout<<n1<<endl;
-    }
-    else{
-        n2-=(y-1);
-        cout<<n2<<endl;
-    }
+    else
+    cout<<"YES";
+    cout<<endl;
 }
 return 0;
 }

@@ -17,35 +17,27 @@ int main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 cout.tie(NULL);
-ll t;
-cin>>t;
-while(t--){
-    ll y,x;
-    cin>>y>>x;
-    ll i=y-1;
-    ll n1=0;
-    ll n2=0;
-    ll j=x-1;
-    if(i%2!=0){
-        n1=(i+1)*(i+1);
-    }
-    else{
-        n1=(i+1)*(i+1)+1;
-    }
-    if(j%2==0){
-        n2=(j+1)*(j+1);
-    }
-    else{
-        n2=j*j+1;
-    }
-    if(y>x){
-        n1-=(x-1);
-        cout<<n1<<endl;
-    }
-    else{
-        n2-=(y-1);
-        cout<<n2<<endl;
+ll n,k;
+cin>>n>>k;
+vector<bool>v;
+v=sieve(1000L);
+ll count=0;
+for(ll i=2;i<=n;i++){
+    for(ll j=i+1;j<=n;j++){
+        if(v[i]==1 && v[j]==1){
+            ll p=i+j+1;
+            if(v[p]==1 && p<=n){
+                count++;
+            }
+                break;
+            
+        }
     }
 }
+if(count>=k)
+cout<<"YES";
+else
+cout<<"NO";
+
 return 0;
 }

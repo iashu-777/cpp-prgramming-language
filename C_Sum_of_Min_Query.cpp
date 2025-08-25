@@ -17,35 +17,44 @@ int main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 cout.tie(NULL);
-ll t;
-cin>>t;
-while(t--){
-    ll y,x;
-    cin>>y>>x;
-    ll i=y-1;
-    ll n1=0;
-    ll n2=0;
-    ll j=x-1;
-    if(i%2!=0){
-        n1=(i+1)*(i+1);
-    }
-    else{
-        n1=(i+1)*(i+1)+1;
-    }
-    if(j%2==0){
-        n2=(j+1)*(j+1);
-    }
-    else{
-        n2=j*j+1;
-    }
-    if(y>x){
-        n1-=(x-1);
-        cout<<n1<<endl;
-    }
-    else{
-        n2-=(y-1);
-        cout<<n2<<endl;
-    }
+ll n,q;
+cin>>n>>q;
+vector<ll>a;
+vector<ll>b;
+
+for(ll i=0;i<n;i++){
+    ll x;
+    cin>>x;
+    a.push_back(x);
 }
+for(ll i=0;i<n;i++){
+    ll x;
+    cin>>x;
+    b.push_back(x);
+}
+ll sum=0;
+for(ll i=0;i<n;i++){
+    sum+=(min(a[i],b[i]));
+}
+for(ll i=0;i<q;i++){
+    char c;
+    cin>>c;
+    if(c=='A'){
+        ll c,d;
+        cin>>c>>d;
+        sum-=(min(a[c-1],b[c-1]));
+        sum+=(min(d,b[c-1]));
+        a[c-1]=d;
+    }
+    else{
+        ll c,d;
+        cin>>c>>d;
+        sum-=(min(a[c-1],b[c-1]));
+        sum+=(min(d,a[c-1]));
+        b[c-1]=d;
+    }
+    cout<<sum<<endl;
+}
+
 return 0;
 }
