@@ -13,19 +13,25 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 ll t;
 cin>>t;
-while(t--){
+for(ll tt=1;tt<=t;tt++){
     ll x,y,k;
     cin>>x>>y>>k;
-    ll a=(k+(y*k));
-    ll b=(x-1);
-    ll ans=(a+b-1)/b+k;
-    if(k>=x && (k!=y)){
-        cout<<ans-1<<endl;
-    }
-    else{
-        cout<<ans<<endl;
-    }
-    // cout<<ans<<endl;
+    // if(t==20000 && tt==441){
+    //     cout<<"Hi"<<x<<"hi"<<y<<"hi"<<k<<"hi";
+    // }
+    ll a=k;
+    ll b=((y*k)+(x-1)-1)/(x-1);
+
+    //x-1  *  b sticks we have , jisme se y*k sstick removed 
+    //if x-1 *b -(y*k) >=k-1 then we dont have to need another c stick
+
+    ll rem=(x-1)*b-(y*k)+1; //stick left from coal trades
+
+    ll c=(k-rem+x-1-1)/(x-1);
+    if(rem>=(k))
+    cout<<a+b<<endl;
+    else
+    cout<<a+b+c<<endl;
 }
 return 0;
 }

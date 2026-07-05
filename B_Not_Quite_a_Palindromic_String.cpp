@@ -13,37 +13,35 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 ll t;
 cin>>t;
-while(t--){
+
+for(ll i=1;i<=t;i++){
     ll n,k;
     cin>>n>>k;
     string s;
     cin>>s;
-    unordered_map<ll,ll>mpp;
-    mpp[0]=0;
-    mpp[1]=0;
-    for(auto x:s){
-        if(x=='0'){
-            mpp[0]++;
-        }
-        else{
-            mpp[1]++;
-        }
-    }
-     ll good_pairs = 0;
-        for(ll i = 0; i < n / 2; i++){
-            if(s[i] == s[n - i - 1]) good_pairs++;
-        }
-
-        // Check if we can rearrange to get exactly k good pairs
-        ll possible_changes = (n / 2) - good_pairs; // Number of mismatched pairs that can be changed
-
-        if(k == possible_changes) {
-            cout<<"YES";
-        } else {
-            cout<<"NO";
-        }
-        cout<<endl;
-    
+    // if(t==10000 && i==193){
+    //     cout<<k<<"hi"<<s<<"hi";
+    // }
+  ll cone=0;
+  ll czero=0;
+  for(auto x:s){
+    if(x=='1')cone++;
+    else czero++;
+  }
+  cone=cone/2;
+  czero=czero/2;
+  ll flag=0;
+  ll start=abs(czero-cone);
+  ll end=czero+cone;
+  for(ll i=start; i<=end;i+=2){
+    if(i==k){
+        flag=1;
+break;
+        }    }
+  
+    if(flag==1)cout<<"YES";
+    else cout<<"NO";
+    cout<<endl;
 
 }
 return 0;

@@ -8,22 +8,47 @@ int main()
     cin.tie(NULL);
     ll n;
     cin >> n;
-    unordered_set<int> st;
-    for (ll i = 0; i < n; i++)
-    {
-        ll x;
-        cin >> x;
-        st.insert(x);
+    vector<ll>v(n,0);
+    for(ll i=0;i<n;i++){
+        cin>>v[i];
     }
-    if(n==2){
-        if(st.size()==2){
+    unordered_map<ll,ll>mpp;
+    for(auto x:v){
+        mpp[x]++;
+    }
+    if(n%2==0){
+        ll po=n/2;
+         ll flag=0;
+        for(auto x:mpp){
+            if(x.second>po){
+                flag=1;
+            }
+        }
+        if(flag==1)
+        {
+            cout<<"NO";
+        }
+        else{
             cout<<"YES";
-        }else cout<<"NO";
+        }
+        cout<<endl;
     }
     else{
-        if(st.size()>=n/2){
+        ll po=(n+1)/2;
+        ll flag=0;
+        for(auto x:mpp){
+            if(x.second>po){
+                flag=1;
+            }
+        }
+        if(flag==1)
+        {
+            cout<<"NO";
+        }
+        else{
             cout<<"YES";
-        }else cout<<"NO";
+        }
+        cout<<endl;
     }
     return 0;
 }

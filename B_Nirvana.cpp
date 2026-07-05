@@ -29,20 +29,30 @@ cout.tie(NULL);
 ll n;
 cin>>n;
 string s=to_string(n);
-ll p=s.size();
-ll flag=0;
-for(ll i=0;i<p;i++){
-    if(s[i]=='0'){
-        flag=1;
-        while(i<p){
-            s[i]='0';
-            i++;
-        }
-    }
+ll maxi=pro(n);
+if(n<10){
+    cout<<n;
 }
-ll ne=stoll(s);
-if(flag==1)
-ne--;
+// else if(n%10==0){
+//     cout<<pro(n-1);
+// }
+else{
 
+    for(ll i=s.size()-1;i>=1;i--){
+        if(s[i-1]!='0'){
+            
+            s[i]='9';
+            s[i-1]--;
+        }
+        else{
+            s[i]='9';
+            
+        }
+        // cout<<s<<endl;
+        ll c=stoll(s);
+        maxi=max(maxi,pro(c));
+    }
+    cout<<maxi<<endl;
+}
 return 0;
 }

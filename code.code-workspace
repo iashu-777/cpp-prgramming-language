@@ -9,7 +9,13 @@
 			"iostream": "cpp",
 			"random": "cpp",
 			"stdio.h": "c",
-			"wait.h": "c"
+			"wait.h": "c",
+			"cstdlib": "cpp",
+			"ostream": "cpp",
+			"array": "cpp",
+			"deque": "cpp",
+			"list": "cpp",
+			"vector": "cpp"
 		}
 	}
 }

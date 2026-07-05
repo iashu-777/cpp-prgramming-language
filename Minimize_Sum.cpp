@@ -1,0 +1,53 @@
+// #include<bits/stdc++.h>
+// using namespace std;
+// #define ll long long
+// #define mod 998244353
+// #define loop(a,b,c) for(ll i=a;i<b;i+=c)
+// ll gcd(ll a, ll b) { return b ? gcd(b, a % b) : a; }
+// ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
+// ll sum_of_digits(ll n){ ll s=0; for(;n;n/=10) s+=n%10; return s; }
+// vector<bool> sieve(ll n){ vector<bool> v(n+1,1); v[0]=v[1]=0; for(ll i=2;i*i<=n;i++) if(v[i]) for(ll j=i*i;j<=n;j+=i) v[j]=0; return v; }
+//  ll lbound(vector<ll>v,ll x){ ll k= lower_bound(v.begin(), v.end(), x) - v.begin();return k;}
+// long long countDivisors(long long n){ long long c=0; for(long long i=1;i*i<=n;i++) if(n%i==0) c+=(i==n/i?1:2); return c; }
+
+
+
+
+
+// int main(){
+// ios_base::sync_with_stdio(false);
+// cin.tie(NULL);
+// cout.tie(NULL);
+// ll t;
+// cin>>t;
+// while(t--){
+//     ll n,m;
+//     cin>>n>>m;
+//     vector<ll>v;
+//     for(ll i=0;i<n;i++){
+//         ll x;
+//         cin>>x;
+//         v.push_back(x);
+//     }
+//     ll sumiti=accumulate(v.begin(),v.end(),0);
+//     ll mini=INT_MAX;
+//     // sort(v.begin(),v.end(),greater<ll>());
+//     vector<ll>diff;
+//     for(auto x:v){
+//         diff.push_back(m-x);
+//     }
+//    ll d=0;
+   
+//     for(ll i=0;i<n;i++){
+//         ll c=diff[0];
+//         ll sum=sumiti;
+//         sum-=v[i];
+//         sum+=((n-1)*(c));
+//     mini=min(sum,mini);
+//    }
+//    cout<<mini<<endl;
+// }
+// return 0;
+// }
+
+

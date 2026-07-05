@@ -10,11 +10,13 @@ cin>>t;
 while(t--){
     ll n,a,b;
     cin>>n>>a>>b;
-    if(n%2!=0){
-        cout<<"YES"<<"\n";
+    if((abs(a-b)-1)%2==0){
+        cout<<"NO";
     }
     else{
-    cout<<"NO"<<"\n";}
+        cout<<"YES";
+    }
+    cout<<endl;
 }
 return 0;
 }

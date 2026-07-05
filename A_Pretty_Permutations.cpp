@@ -23,31 +23,27 @@ cin>>t;
 while(t--){
     ll n;
     cin>>n;
-    if(n==1){
-        cout<<1;
+    vector<ll>ans;
+   if(n%2==0){
+    for(ll i=1;i<=n;i+=2){
+        // cout<<i+1<<" "<<i<<" ";
+        ans.push_back(i+1);
+        ans.push_back(i);
     }
-    else if(n==2){
-        cout<<2<<" "<<1;
+   }
+   else{
+        for(ll i=1;i<=n-1;i+=2){
+        // cout<<i+1<<" "<<i<<" ";
+        ans.push_back(i+1);
+        ans.push_back(i);
     }
-    else if(n==3){
-        cout<<3<<" "<<1<<" "<<2;
-    }
-    else{
+    ans.push_back(n);
+    swap(ans[n-1],ans[n-2]);
 
-        if(n%2==0){
-            for(ll i=2;i<=n;i+=2){
-                cout<<i<<" "<<i-1<<" ";
-            }
-        }
-        else{
-            ll j=1;
-            cout<<3<<" "<<1<<" "<<2<<" ";
-            n=n-3;
-            for(j=5;j<=n;j+=2){
-                cout<<j<<" "<<j-1<<" ";
-            }
-        }
-    }
+   }
+   for(auto x:ans){
+    cout<<x<<" ";
+   }
     cout<<endl;
 }
 return 0;

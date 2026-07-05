@@ -16,8 +16,7 @@ cin>>t;
 while(t--){
     ll n;
     cin>>n;
-    vector<ll>v;
-    ll sum=0;
+    vector<vector<ll>>v;
     for(ll i=0;i<n;i++){
         ll size;
         cin>>size;
@@ -27,17 +26,25 @@ while(t--){
             cin>>x;
             a.push_back(x);
         }
+        
         sort(a.begin(),a.end());
-        v.push_back(a[0]);
-a.erase(find(a.begin(),a.end(),a[0]));
-        v.push_back(a[0]);
-        sum+=a[0];
-    }
-    sort(v.begin(),v.end());
-    ll c=v[0];
-v.erase(find(v.begin(),v.end(),c));
+      v.push_back(a);
+}
+ll mini=INT_MAX;
+for(ll i=0;i<n;i++){
+   mini=min(v[i][0],mini);
+}
+ll c=mini;
+mini=INT_MAX;
+ll sum=0;
+for(ll i=0;i<n;i++){
+    sum+=(v[i][1]);
+   mini=min(v[i][1],mini);
+}
+cout<<c+(sum-mini)<<endl;
 
-    cout<<sum+c-v[0]<<endl;
+
+
 }
 return 0;
 }
